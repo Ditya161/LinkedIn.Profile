@@ -1,0 +1,776 @@
+<!-- 🔵 MAKER — Strength After 50 -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An eight-week beginner strength programme for adults 50+, with small-group coaching, evidence-based programming and progress checks.">
+  <meta property="og:title" content="Strength After 50 — Build strength for the life you want to keep living">
+  <meta property="og:description" content="Find your starting block for an eight-week coached strength programme.">
+  <!-- Add an og:image sized 1200x630 before publishing. -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Strength After 50">
+  <meta name="twitter:description" content="Find your starting block for an eight-week coached strength programme.">
+  <meta name="theme-color" content="#020a18">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='82'%3E🏋️%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      if (localStorage.getItem("strength50-theme") === "light") {
+        document.documentElement.classList.add("light");
+      }
+    } catch (_) {}
+  </script>
+  <title>Strength After 50 | Find your starting block</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #020a18;
+      --bg-grad: linear-gradient(170deg, #020a18, #041028 40%, #06142e 70%, #020a18);
+      --surface: rgba(8,24,56,0.85);
+      --border: rgba(0,170,255,0.12);
+      --text: #d0e0f0;
+      --text-bright: #e8f0ff;
+      --text-dim: #6888aa;
+      --neon: #00aaff;
+      --cyan: #00e5ff;
+      --green: #00ff88;
+      --amber: #ffaa00;
+      --shadow: 0 24px 80px rgba(0,0,0,.25);
+    }
+
+    html.light {
+      color-scheme: light;
+      --bg: #f4f8fc;
+      --bg-grad: linear-gradient(170deg, #f4f8fc, #eaf4ff 42%, #f7fbff 75%, #eef5fb);
+      --surface: rgba(255,255,255,.88);
+      --border: rgba(0,90,160,.17);
+      --text: #40556c;
+      --text-bright: #10263f;
+      --text-dim: #647d96;
+      --neon: #087dd3;
+      --cyan: #008dad;
+      --green: #087b52;
+      --amber: #a96700;
+      --shadow: 0 24px 80px rgba(16,52,88,.1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg-grad);
+      font: 400 16px/1.65 Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .34;
+      background-image:
+        linear-gradient(rgba(100,170,220,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,170,220,.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+    .orb {
+      position: fixed;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .15;
+      z-index: -1;
+      pointer-events: none;
+      animation: orbit 24s ease-in-out infinite alternate;
+    }
+    .orb.one { background: var(--neon); top: 8%; left: -180px; }
+    .orb.two { background: var(--cyan); right: -180px; top: 45%; animation-delay: -12s; }
+    @keyframes orbit {
+      from { transform: translate3d(0,0,0) scale(.9); }
+      to { transform: translate3d(80px,50px,0) scale(1.15); }
+    }
+
+    a { color: var(--cyan); }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg) 72%, transparent);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .header-inner {
+      max-width: 880px;
+      min-height: 72px;
+      margin: auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      color: var(--text-bright);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: .94rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 37px;
+      height: 37px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--cyan);
+      background: var(--surface);
+      box-shadow: 0 0 24px rgba(0,170,255,.1);
+    }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .header-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 600;
+    }
+    .theme-toggle {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--text-bright);
+      background: var(--surface);
+      cursor: pointer;
+    }
+    .theme-toggle:hover, .header-link:hover { color: var(--cyan); }
+
+    main { max-width: 880px; margin: 0 auto; padding: 0 24px 72px; }
+    section { scroll-margin-top: 94px; }
+    .hero { padding: 76px 0 54px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .74rem;
+      font-weight: 800;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: currentColor;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 760px;
+      margin: 18px 0 18px;
+      color: var(--text-bright);
+      font-size: clamp(2.65rem, 7vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+    }
+    h1 span {
+      color: transparent;
+      background: linear-gradient(90deg, var(--cyan), var(--neon) 55%, var(--green));
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    .hero-copy { max-width: 650px; color: var(--text); font-size: 1.13rem; }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 22px 0 28px;
+    }
+    .pill {
+      padding: 6px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-dim);
+      background: rgba(90,150,210,.055);
+      font-size: .78rem;
+      font-weight: 600;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 21px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      color: #001222;
+      background: linear-gradient(110deg, var(--cyan), var(--neon));
+      box-shadow: 0 9px 30px rgba(0,170,255,.2);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,170,255,.28); }
+    .button.secondary {
+      color: var(--text-bright);
+      border-color: var(--border);
+      background: var(--surface);
+      box-shadow: none;
+    }
+    .hero-note { margin: 13px 0 0; color: var(--text-dim); font-size: .8rem; }
+
+    .section-block { padding: 48px 0; border-top: 1px solid var(--border); }
+    .section-heading { max-width: 620px; margin-bottom: 25px; }
+    h2 {
+      margin-bottom: 10px;
+      color: var(--text-bright);
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      line-height: 1.15;
+      letter-spacing: -.045em;
+    }
+    .section-heading p { color: var(--text-dim); margin-bottom: 0; }
+    .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .reason-card { padding: 20px; }
+    .number {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 16px;
+      border-radius: 11px;
+      color: #001222;
+      background: var(--cyan);
+      font-size: .84rem;
+      font-weight: 800;
+    }
+    h3 { margin-bottom: 7px; color: var(--text-bright); font-size: 1rem; }
+    .reason-card p { margin-bottom: 0; color: var(--text-dim); font-size: .9rem; }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+    .experience-visual {
+      min-height: 230px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(0,229,255,.15), transparent 42%),
+        linear-gradient(145deg, rgba(0,170,255,.08), rgba(0,255,136,.035));
+    }
+    .barbell {
+      width: min(78%, 340px);
+      height: 8px;
+      position: relative;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--text-dim), var(--text-bright), var(--text-dim));
+      box-shadow: 0 0 28px rgba(0,229,255,.25);
+    }
+    .barbell::before, .barbell::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 35px;
+      height: 90px;
+      border: 7px solid var(--neon);
+      border-radius: 9px;
+      transform: translateY(-50%);
+      background: rgba(0,170,255,.12);
+    }
+    .barbell::before { left: 15%; }
+    .barbell::after { right: 15%; }
+    .experience-copy p { color: var(--text-dim); }
+    .steps { display: grid; gap: 12px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .steps li { display: flex; gap: 11px; align-items: flex-start; }
+    .step-dot {
+      flex: 0 0 24px;
+      display: grid;
+      place-items: center;
+      height: 24px;
+      border-radius: 50%;
+      color: var(--green);
+      background: rgba(0,255,136,.1);
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .quote-card {
+      padding: 25px;
+      border-left: 3px solid var(--amber);
+    }
+    blockquote { margin: 0; color: var(--text-bright); font-size: clamp(1.15rem, 3vw, 1.55rem); line-height: 1.45; letter-spacing: -.025em; }
+    .quote-source { margin: 14px 0 0; color: var(--text-dim); font-size: .82rem; }
+    .quote-note { margin: 12px 0 0; color: var(--text-dim); font-size: .78rem; }
+
+    .faq-list { display: grid; gap: 10px; }
+    details {
+      padding: 17px 19px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface);
+    }
+    summary { color: var(--text-bright); font-weight: 700; cursor: pointer; }
+    details p { margin: 10px 0 0; color: var(--text-dim); font-size: .92rem; }
+
+    .qualifier-wrap {
+      padding: clamp(21px, 5vw, 38px);
+      border: 1px solid rgba(0,170,255,.25);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(0,170,255,.12), transparent 35%),
+        var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .quiz-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    .quiz-progress-label { color: var(--text-dim); font-size: .78rem; font-weight: 700; }
+    .progress-track { height: 6px; margin: 14px 0 25px; border-radius: 99px; background: rgba(120,160,200,.14); overflow: hidden; }
+    .progress-fill { width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--cyan), var(--green)); transition: width .25s ease; }
+    .question-title { margin-bottom: 8px; color: var(--text-bright); font-size: clamp(1.25rem, 3vw, 1.7rem); letter-spacing: -.035em; }
+    .question-hint { margin-bottom: 19px; color: var(--text-dim); font-size: .9rem; }
+    .answers { display: grid; gap: 10px; }
+    .answer {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      background: rgba(80,130,180,.045);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .answer:hover { border-color: var(--neon); }
+    .answer[aria-pressed="true"] { border-color: var(--cyan); background: rgba(0,170,255,.12); color: var(--text-bright); }
+    .radio {
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--text-dim);
+      border-radius: 50%;
+    }
+    .answer[aria-pressed="true"] .radio { border: 5px solid var(--cyan); }
+    .quiz-controls { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; }
+    .quiz-controls .button { min-height: 45px; }
+    .button:disabled { opacity: .42; cursor: not-allowed; transform: none; }
+    .result { display: none; }
+    .result-kicker { color: var(--green); font-size: .75rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .result h3 { margin: 9px 0; font-size: 1.7rem; letter-spacing: -.04em; }
+    .result-copy { max-width: 590px; color: var(--text-dim); }
+    .result-list { display: grid; gap: 9px; margin: 20px 0 24px; padding: 0; list-style: none; }
+    .result-list li::before { content: "✓"; margin-right: 9px; color: var(--green); font-weight: 800; }
+    .result-disclaimer { color: var(--text-dim); font-size: .78rem; }
+    .quiz-error { min-height: 1.3em; margin: 10px 0 0; color: var(--amber); font-size: .82rem; }
+    footer {
+      padding: 27px 0 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: .8rem;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    :focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+
+    @media (max-width: 680px) {
+      .header-inner { padding-inline: 17px; }
+      main { padding-inline: 17px; }
+      .hero { padding-top: 55px; }
+      .reason-grid { grid-template-columns: 1fr; }
+      .reason-card { display: grid; grid-template-columns: 42px 1fr; column-gap: 13px; }
+      .reason-card .number { grid-row: span 2; margin: 0; }
+      .reason-card h3 { align-self: end; }
+      .experience { grid-template-columns: 1fr; padding: 17px; }
+      .experience-visual { min-height: 170px; }
+      .header-link { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb one" aria-hidden="true"></div>
+  <div class="orb two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Strength After 50 home">
+        <span class="brand-mark" aria-hidden="true">↗</span>
+        <span>Strength After 50</span>
+      </a>
+      <div class="header-actions">
+        <a class="header-link" href="#how-it-works">How it works</a>
+        <a class="header-link" href="#qualifier">Find your starting block</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+          <span id="themeIcon" aria-hidden="true">☀</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">Eight-week coached strength programme</span>
+      <h1>Build strength for the life you want to <span>keep living.</span></h1>
+      <p class="hero-copy">A beginner-friendly barbell course for adults 50+, with small-group coaching, evidence-based programming and progress checks to help you find a confident place to start.</p>
+      <div class="hero-meta" aria-label="Programme features">
+        <span class="pill">Adults 50+</span>
+        <span class="pill">Small-group sessions</span>
+        <span class="pill">Baseline DEXA scan</span>
+        <span class="pill">Progress check-ins</span>
+      </div>
+      <a class="button" href="#qualifier">Find your starting block <span aria-hidden="true">→</span></a>
+      <p class="hero-note">A short, supportive guide to which entry point may suit you.</p>
+    </section>
+
+    <section class="section-block" aria-labelledby="reasons-title">
+      <div class="section-heading">
+        <span class="eyebrow">A steadier way to start</span>
+        <h2 id="reasons-title">Strength training, made approachable.</h2>
+        <p>You do not need barbell experience or a perfect routine to begin.</p>
+      </div>
+      <div class="reason-grid">
+        <article class="card reason-card">
+          <span class="number">01</span>
+          <h3>Coaching from day one</h3>
+          <p>Learn the movements at a pace that suits you, with a coach and a small group beside you.</p>
+        </article>
+        <article class="card reason-card">
+          <span class="number">02</span>
+          <h3>Progress with a purpose</h3>
+          <p>Follow evidence-based programming designed around building strength and everyday capability.</p>
+        </article>
+        <article class="card reason-card">
+          <span class="number">03</span>
+          <h3>See your starting point</h3>
+          <p>A baseline DEXA scan and monthly progress check help you track the measures included in the programme.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block" id="how-it-works" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <span class="eyebrow">The experience</span>
+        <h2 id="experience-title">A first session could look like this.</h2>
+      </div>
+      <div class="card experience">
+        <div class="experience-visual" role="img" aria-label="Illustration of a barbell">
+          <div class="barbell" aria-hidden="true"></div>
+        </div>
+        <div class="experience-copy">
+          <h3>Learn the basics, one step at a time.</h3>
+          <p>Your coach introduces the equipment, demonstrates the movements and helps you choose a starting level that feels manageable.</p>
+          <ul class="steps">
+            <li><span class="step-dot">1</span><span>Check in and talk through your goals.</span></li>
+            <li><span class="step-dot">2</span><span>Practise beginner barbell movements with coaching.</span></li>
+            <li><span class="step-dot">3</span><span>Leave knowing what comes next in your plan.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="proof-title">
+      <div class="section-heading">
+        <span class="eyebrow">A real concern, heard often</span>
+        <h2 id="proof-title">You are not the only one starting with questions.</h2>
+      </div>
+      <div class="card quote-card">
+        <blockquote>“I do not have the confidence to join.”</blockquote>
+        <p class="quote-source">Savanta / ukactive Health &amp; Fitness Consumer survey, 2024</p>
+        <p class="quote-note">This is a research finding, not a programme testimonial. The course is designed to make a first step feel more supported.</p>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="faq-title">
+      <div class="section-heading">
+        <span class="eyebrow">Good to know</span>
+        <h2 id="faq-title">Questions before you begin.</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Do I need experience with barbells?</summary>
+          <p>No. This is a beginner course, and the movements are introduced with coaching and options for your starting level.</p>
+        </details>
+        <details>
+          <summary>What if I have not exercised in a while?</summary>
+          <p>The starting-block guide helps you reflect on your experience and support preferences. A coach can discuss the programme with you before you decide.</p>
+        </details>
+        <details>
+          <summary>Is a DEXA scan a diagnosis?</summary>
+          <p>No. A DEXA scan is a measurement; it does not diagnose a health condition. Ask your clinician about medical questions or whether a scan is appropriate for you.</p>
+        </details>
+        <details>
+          <summary>What if I have an injury or health condition?</summary>
+          <p>Please speak with your healthcare professional and the programme team before taking part. This short qualifier does not assess medical readiness.</p>
+        </details>
+        <details>
+          <summary>Can I help a parent decide?</summary>
+          <p>Yes. You can complete the guide together, but the answers should reflect the participant’s own goals, comfort and preferences.</p>
+        </details>
+        <details>
+          <summary>How much does the programme cost?</summary>
+          <p>The confirmed programme price and whether the DEXA scan is included will be shown before you book.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section-block" id="qualifier" aria-labelledby="qualifier-title">
+      <div class="section-heading">
+        <span class="eyebrow">Find your starting block</span>
+        <h2 id="qualifier-title">Is this for you?</h2>
+        <p>Answer five quick questions. Your result suggests a programme entry point based on your experience and the kind of support you prefer.</p>
+      </div>
+      <div class="qualifier-wrap">
+        <div id="quiz">
+          <div class="quiz-top">
+            <strong class="quiz-progress-label" id="progressLabel">Question 1 of 5</strong>
+            <span class="quiz-progress-label">About 1 minute</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+          <div id="questionArea" aria-live="polite"></div>
+          <p class="quiz-error" id="quizError" role="status"></p>
+          <div class="quiz-controls">
+            <button class="button secondary" id="backButton" type="button" disabled>← Back</button>
+            <button class="button" id="nextButton" type="button" disabled>Next →</button>
+          </div>
+        </div>
+        <div class="result" id="result" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <span>Strength After 50</span>
+        <span>Programme details and availability are confirmed by the local team.</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+
+      function updateThemeButton() {
+        const light = root.classList.contains("light");
+        themeToggle.setAttribute("aria-label", light ? "Switch to dark theme" : "Switch to light theme");
+        themeToggle.title = light ? "Switch to dark theme" : "Switch to light theme";
+        themeIcon.textContent = light ? "☾" : "☀";
+      }
+      updateThemeButton();
+      themeToggle.addEventListener("click", () => {
+        root.classList.toggle("light");
+        try {
+          localStorage.setItem("strength50-theme", root.classList.contains("light") ? "light" : "dark");
+        } catch (_) {}
+        updateThemeButton();
+      });
+
+      const questions = [
+        {
+          title: "How often do you currently do strength training?",
+          hint: "Choose what best describes the last few months.",
+          answers: [
+            ["I am new to it, or it has been a long time.", 0],
+            ["I do some strength work now and then.", 1],
+            ["I train with weights regularly.", 2]
+          ]
+        },
+        {
+          title: "How familiar are you with barbell exercises?",
+          hint: "There is no wrong answer; beginners are welcome.",
+          answers: [
+            ["I have not used a barbell before.", 0],
+            ["I have tried a few movements.", 1],
+            ["I know the basics and have used one before.", 2]
+          ]
+        },
+        {
+          title: "How do you feel about exercising in a small group?",
+          hint: "Think about the environment where you would feel comfortable.",
+          answers: [
+            ["I would like close guidance as I get comfortable.", 0],
+            ["A small group sounds helpful with some coaching.", 1],
+            ["I am comfortable training with a group.", 2]
+          ]
+        },
+        {
+          title: "What would you most like to get from the programme?",
+          hint: "Choose the closest match to your main goal.",
+          answers: [
+            ["A reassuring, supported way to begin.", 0],
+            ["A steady routine and confidence with the basics.", 1],
+            ["A structured next step for my strength training.", 2]
+          ]
+        },
+        {
+          title: "What kind of support would help you most?",
+          hint: "Your preference helps us suggest a starting point.",
+          answers: [
+            ["Frequent guidance and time to learn at my pace.", 0],
+            ["Coaching, plus a clear plan to follow.", 1],
+            ["A progressive plan with regular check-ins.", 2]
+          ]
+        }
+      ];
+
+      const questionArea = document.getElementById("questionArea");
+      const progressLabel = document.getElementById("progressLabel");
+      const progressFill = document.getElementById("progressFill");
+      const backButton = document.getElementById("backButton");
+      const nextButton = document.getElementById("nextButton");
+      const quizError = document.getElementById("quizError");
+      const quiz = document.getElementById("quiz");
+      const result = document.getElementById("result");
+      let current = 0;
+      const selected = Array(questions.length).fill(null);
+
+      function renderQuestion() {
+        const q = questions[current];
+        progressLabel.textContent = `Question ${current + 1} of ${questions.length}`;
+        progressFill.style.width = `${(current / questions.length) * 100}%`;
+        backButton.disabled = current === 0;
+        nextButton.disabled = selected[current] === null;
+        nextButton.textContent = current === questions.length - 1 ? "See my starting block →" : "Next →";
+        quizError.textContent = "";
+
+        const title = document.createElement("h3");
+        title.className = "question-title";
+        title.id = "questionTitle";
+        title.textContent = q.title;
+
+        const hint = document.createElement("p");
+        hint.className = "question-hint";
+        hint.textContent = q.hint;
+
+        const answers = document.createElement("div");
+        answers.className = "answers";
+        answers.setAttribute("role", "group");
+        answers.setAttribute("aria-labelledby", "questionTitle");
+
+        q.answers.forEach(([label, score], index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "answer";
+          button.setAttribute("aria-pressed", selected[current] === index ? "true" : "false");
+          const radio = document.createElement("span");
+          radio.className = "radio";
+          radio.setAttribute("aria-hidden", "true");
+          const text = document.createElement("span");
+          text.textContent = label;
+          button.append(radio, text);
+          button.addEventListener("click", () => {
+            selected[current] = index;
+            answers.querySelectorAll(".answer").forEach((item, i) => {
+              item.setAttribute("aria-pressed", i === index ? "true" : "false");
+            });
+            nextButton.disabled = false;
+            quizError.textContent = "";
+          });
+          answers.appendChild(button);
+        });
+        questionArea.replaceChildren(title, hint, answers);
+      }
+
+      function showResult() {
+        const total = selected.reduce((sum, answer, i) => sum + questions[i].answers[answer][1], 0);
+        let tier;
+        if (total <= 3) {
+          tier = {
+            name: "Supported Start",
+            copy: "A gentle, coached introduction may be the right first block. Take time to learn the movements, ask questions and build familiarity with the routine.",
+            list: ["Begin with the basics and close coaching.", "Build comfort with equipment and small-group sessions.", "Review your next step with the programme team."]
+          };
+        } else if (total <= 7) {
+          tier = {
+            name: "Barbell Foundations",
+            copy: "You have some experience or feel ready to build a routine. A foundations-first entry point can help you practise the core lifts and progress steadily.",
+            list: ["Learn and refine beginner barbell movements.", "Follow a clear, coached programme.", "Use check-ins to reflect on your progress."]
+          };
+        } else {
+          tier = {
+            name: "Strength Progression",
+            copy: "You are already comfortable with strength training. A progression-focused conversation can help you understand how this course fits your current routine and goals.",
+            list: ["Discuss your current training and goals with a coach.", "Explore how the programme’s structure fits your experience.", "Agree a suitable starting level before you begin."]
+          };
+        }
+
+        quiz.style.display = "none";
+        result.style.display = "block";
+        progressFill.style.width = "100%";
+        result.innerHTML = `
+          <p class="result-kicker">Your suggested entry point</p>
+          <h3>${tier.name}</h3>
+          <p class="result-copy">${tier.copy}</p>
+          <ul class="result-list">${tier.list.map(item => `<li>${item}</li>`).join("")}</ul>
+          <a class="button" href="mailto:hello@example.com?subject=Strength%20After%2050%20programme%20enquiry">Ask about this starting block <span aria-hidden="true">→</span></a>
+          <p class="result-disclaimer">This is a programme suggestion based on your answers, not a medical assessment. Speak with your healthcare professional about health or injury concerns. Replace the sample email link with your local programme contact before publishing.</p>
+          <p style="margin-top:18px"><button class="button secondary" type="button" id="restartButton">Start again</button></p>
+        `;
+        document.getElementById("restartButton").addEventListener("click", () => {
+          selected.fill(null);
+          current = 0;
+          result.style.display = "none";
+          quiz.style.display = "block";
+          renderQuestion();
+        });
+      }
+
+      backButton.addEventListener("click", () => {
+        if (current > 0) {
+          current--;
+          renderQuestion();
+        }
+      });
+      nextButton.addEventListener("click", () => {
+        if (selected[current] === null) {
+          quizError.textContent = "Choose an answer to continue.";
+          return;
+        }
+        if (current < questions.length - 1) {
+          current++;
+          renderQuestion();
+        } else {
+          showResult();
+        }
+      });
+
+      renderQuestion();
+    })();
+  </script>
+</body>
+</html>
